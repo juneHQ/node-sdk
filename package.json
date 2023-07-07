@@ -1,6 +1,6 @@
 {
-  "name": "@june-so/node-sdk",
-  "version": "1.0.0",
+  "name": "some-test-node-sdk",
+  "version": "1.0.2",
   "description": "June Node SDK",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",

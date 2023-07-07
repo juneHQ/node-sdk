@@ -1,5 +1,5 @@
-import BaseAnalytics from "analytics-node";
 import { AxiosInstance, AxiosRequestConfig } from "axios";
+import { AnalyticsNode } from ".";
 
 export type AnalyticsOptions = {
   flushAt?: number | undefined;
@@ -17,7 +17,7 @@ type BaseAnalyticsOptions = AnalyticsOptions & {
   path: string;
 };
 
-export class Analytics extends BaseAnalytics {
+export class Analytics extends AnalyticsNode {
   constructor(writeKey: string, opts?: AnalyticsOptions) {
     const options = opts ?? {};
     const mergedOptions: BaseAnalyticsOptions = {
