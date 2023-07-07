@@ -1,13 +1,7 @@
 import AnalyticsNode from "analytics-node";
 import {
-  AnalyticsOptions,
-  BaseAnalyticsOptions,
-  Identity,
-  AnyObject,
-  Integrations,
-  Data,
+  AnalyticsOptions, AnyObject, BaseAnalyticsOptions, Data, Identity, Integrations
 } from "./types";
-import { enhanceContext } from "./utilts";
 
 export class Analytics {
   private readonly nodeAnalytics: AnalyticsNode;
@@ -32,12 +26,7 @@ export class Analytics {
     },
     callback?: (err: Error) => void
   ): Analytics {
-    const newContext = enhanceContext(message.context ?? {});
-    const newMessage = {
-      ...message,
-      context: newContext,
-    };
-    this.nodeAnalytics.identify(newMessage, callback);
+    this.nodeAnalytics.identify(message, callback);
     return this;
   }
 
@@ -51,12 +40,7 @@ export class Analytics {
     },
     callback?: (err: Error) => void
   ): Analytics {
-    const newContext = enhanceContext(message.context ?? {});
-    const newMessage = {
-      ...message,
-      context: newContext,
-    };
-    this.nodeAnalytics.track(newMessage, callback);
+    this.nodeAnalytics.track(message, callback);
     return this;
   }
 
@@ -72,12 +56,7 @@ export class Analytics {
     },
     callback?: (err: Error) => void
   ): Analytics {
-    const newContext = enhanceContext(message.context ?? {});
-    const newMessage = {
-      ...message,
-      context: newContext,
-    };
-    this.nodeAnalytics.page(newMessage, callback);
+    this.nodeAnalytics.page(message, callback);
     return this;
   }
 
@@ -91,12 +70,7 @@ export class Analytics {
     },
     callback?: (err: Error) => void
   ): Analytics {
-    const newContext = enhanceContext(message.context ?? {});
-    const newMessage = {
-      ...message,
-      context: newContext,
-    };
-    this.nodeAnalytics.screen(newMessage, callback);
+    this.nodeAnalytics.screen(message, callback);
     return this;
   }
 
@@ -107,12 +81,7 @@ export class Analytics {
     },
     callback?: (err: Error) => void
   ): Analytics {
-    const newContext = enhanceContext({});
-    const newMessage = {
-      ...message,
-      context: newContext,
-    };
-    this.nodeAnalytics.alias(newMessage, callback);
+    this.nodeAnalytics.alias(message, callback);
     return this;
   }
 
@@ -126,12 +95,7 @@ export class Analytics {
     },
     callback?: (err: Error) => void
   ): Analytics {
-    const newContext = enhanceContext(message.context ?? {});
-    const newMessage = {
-      ...message,
-      context: newContext,
-    };
-    this.nodeAnalytics.group(newMessage, callback);
+    this.nodeAnalytics.group(message, callback);
     return this;
   }
 
