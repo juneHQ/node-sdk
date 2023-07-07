@@ -2,6 +2,30 @@ import axios from "axios";
 import { Analytics } from "../client";
 
 describe("Client", () => {
+  it("should be able to create a new instance", () => {
+    // given
+    const analytics = new Analytics("writeKey");
+
+    // then
+    expect(analytics).toBeDefined();
+  });
+
+  it("should not be able to create a new instance without writeKey", () => {
+    // given
+    // then
+    expect(() => new Analytics(undefined as any)).toThrowError(
+      "You must pass your June project's write key."
+    );
+  });
+
+  it("should not be able to create a new instance with object writeKey", () => {
+    // given
+    // then
+    expect(() => new Analytics({} as any)).toThrowError(
+      "You must pass your June project's write key."
+    );
+  });
+
   it("should track events and send it to api.june.so/sdk/batch", async () => {
     // given
     const axiosInstance = axios.create();
