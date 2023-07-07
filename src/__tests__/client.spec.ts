@@ -128,7 +128,7 @@ describe("Client", () => {
     });
 
     // when
-    new Array(10).fill(0).forEach((_) =>
+    new Array(10).fill(0).forEach(() =>
       analytics.track({
         userId: "userId",
         event: "event",

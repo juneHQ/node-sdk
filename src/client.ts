@@ -1,5 +1,5 @@
 import { AxiosInstance, AxiosRequestConfig } from "axios";
-import { AnalyticsNode } from ".";
+import AnalyticsNode from "analytics-node";
 
 export type AnalyticsOptions = {
   flushAt?: number | undefined;
